@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>light up the webpage</title>
+
+    
+</head>
+<style>
+    body
+    {
+       margin:2px;
+        box-sizing: border-box;
+    }
+    .backlight
+{ 
+   background-color: blue;
+    padding: 0%;
+    top: 20px;
+    margin-top: 0px;
+    width: 80vw;
+    height: 350px;
+    background: radial-gradient(circle,rgb(244, 244, 240)20%,#f9f077f6 30%,rgba(250, 238, 132, 0.899) 40%,#f5ea89f6 50%,rgba(236, 230, 176, 0.899),rgba(240, 240, 174, 0.716),rgb(240, 240, 191),rgba(243, 243, 235, 0.859));
+    border-radius: 50%;
+    visibility:hidden;
+ 
+}
+    .container{
+      
+    width: 100vw;
+    height: 100vh;
+    /* background-color: aqua; */
+    display: flex;
+  justify-content: center; 
+  align-items: center;
+    }
+.imgb
+{  
+  width: 400px;
+  height: 350px;
+  display: flex;
+    align-items: center;
+  justify-content: center; 
+
+}
+#bulbOff {
+    overflow: hidden;
+    position:absolute;
+    width:250px;
+    height:300px ;
+    margin-top: 20px;
+ }
+
+.switch{
+  
+    /* background-color: rgb(183, 255, 0); */
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+ 
+ }
+.btn{
+   
+    width: 80px;
+    height: 40px;
+    font-size: 20px; 
+    display: flex;
+    align-items: center;
+  justify-content: center; 
+ 
+}
+#onbtn{
+    background-color: blueviolet;
+ display: flex; 
+ justify-content: center;
+
+}
+.inlineblk{
+    margin-top: px;
+    width:400px;
+    /* background-color: rgb(113, 59, 39); */
+    display: flex;
+    align-items: center ;
+    justify-content: center; 
+}
+
+</style>
+<body>
+    <div class="container" >
+    <div>
+    <div class="imgb">
+        <img id="bulbOff" src="/light-bulb-off.png">
+        <div id="backligh"class="backlight"></div>  
+    </div>
+    <div class="inlineblk">
+    <div class="switch">
+        <button id="onbtn" class="btn" onclick ="funchg()">ON</button>
+     
+    </div>
+    </div>
+    </div>
+    </div>
+    <script>
+        function funchg(){
+            let bid =document.getElementById('bulbOff');
+            if(bid.src.match('light-bulb-off'))
+           { bid.setAttribute('src',"light-bulb-on.png");
+            document.getElementById("backligh").style="visibility:visible";
+             document.getElementById('onbtn').innerHTML="OFF";
+            }
+            else if(bid.src.match('light-bulb-on'))
+            {bid.setAttribute('src',"light-bulb-off.png");
+            document.getElementById("backligh").style="visibility:hidden";
+             document.getElementById('onbtn').innerHTML="ON";
+       } }
+      
+    </script> 
+</body>
+
+
+</html>
